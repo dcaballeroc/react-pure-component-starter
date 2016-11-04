@@ -1,8 +1,8 @@
-import createTitle from 'components/title';
-import createHello from 'components/hello';
+import createTitle from './components/title';
+import createHello from './components/hello';
 import { createStore } from 'redux';
 
-import hello from 'store/reducers/hello';
+import hello from './store/reducers/hello';
 
 const store = createStore(hello);
 
