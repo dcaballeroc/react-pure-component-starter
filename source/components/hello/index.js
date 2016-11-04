@@ -1,4 +1,4 @@
-require('sass/components/hello.scss');
+import '../../sass/components/hello.scss';
 
 export default React => {
 
