@@ -19,12 +19,22 @@ export default {
       browser: true,
     }),
     commonjs({
+      exclude: 'node_modules/process-es6/**',
+      include: [
+        'node_modules/fbjs/**',
+        'node_modules/object-assign/**',
+        'node_modules/react/**',
+        'node_modules/react-dom/**',
+      ],
       namedExports: {
         'node_modules/react-dom/index.js': ['render'],
       },
     }),
     babel({
+      babelrc: false,
       exclude: 'node_modules/**',
+      presets: [['es2015', { modules: false } ], 'stage-0', 'react'],
+      plugins: ['external-helpers'],
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('development'),
