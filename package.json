@@ -5,13 +5,13 @@
   "scripts": {
     "clean": "rimraf build",
     "build:rollup": "rollup -c",
-    "build": "npm run clean && npm run build:rollup",
+    "build": "yarn run clean && yarn run build:rollup",
     "start": "cross-env NODE_PATH='source' node devServer.js",
-    "debug": "cross-env NODE_PATH='source' echo 'Nothing? `npm install -g iron-node`' && iron-node source/debug.js",
+    "debug": "cross-env NODE_PATH='source' echo 'Nothing? `yarn add -g iron-node`' && iron-node source/debug.js",
     "lint": "eslint source",
-    "pretest": "npm run lint",
+    "pretest": "yarn run lint",
     "test": "cross-env NODE_PATH='source' babel-node source/test/index.js",
-    "watch": "watch 'clear && npm run test -s' source",
+    "watch": "watch 'clear && yarn run test -s' source",
     "update": "updtr"
   },
   "repository": {
@@ -35,9 +35,8 @@
   "devDependencies": {
     "babel-cli": "6.18.0",
     "babel-eslint": "7.1.0",
-    "babel-plugin-react-transform": "2.0.2",
-    "babel-plugin-transform-runtime": "6.15.0",
-    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-plugin-external-helpers": "6.18.0",
+    "babel-preset-es2015": "6.18.0",
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-0": "6.16.0",
     "cheerio": "0.22.0",
