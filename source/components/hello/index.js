@@ -1,5 +1,3 @@
-import '../../sass/components/hello.scss';
-
 export default React => {
 
   const {
