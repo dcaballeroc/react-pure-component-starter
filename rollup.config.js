@@ -4,6 +4,8 @@ import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
 import sass from 'rollup-plugin-sass';
 import uglify from 'rollup-plugin-uglify';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
 
 const config = {
   entry: 'source/index.js',
@@ -15,6 +17,11 @@ const config = {
 const plugins = [
   sass({
     output: 'build/app.css',
+    processor(css, id) {
+      return postcss([autoprefixer({ browsers: ['last 2 versions'] })])
+        .process(css)
+        .then(result => result.css);
+    }
   }),
   resolve({
     jsnext: true,

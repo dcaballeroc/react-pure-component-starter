@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import createApp from './App';
 
+import './sass/components/hello.scss';
+
 const App = createApp(React);
 
 const props = {
